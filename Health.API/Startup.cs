@@ -53,12 +53,12 @@ namespace Health.API
                 c.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None;
                 c.LoginPath = new PathString("/signin");
                 c.LogoutPath = new PathString("/signout");
-                c.EventsType = typeof(UserAutheticationEvent);
+                c.EventsType = typeof(UserAuthenticationEvent);
                 c.Cookie.HttpOnly = true;
                 c.AccessDeniedPath = new PathString("/unauthorized");
                 c.SlidingExpiration = true;
             }); ;
-            services.AddScoped<UserAutheticationEvent>();
+            services.AddScoped<UserAuthenticationEvent>();
             services.AddControllers();
         }
 
